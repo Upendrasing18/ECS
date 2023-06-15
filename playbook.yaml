@@ -1,0 +1,24 @@
+- name: Run Python script and Terraform
+  hosts: 3.108.55.73       
+  gather_facts: false
+  become: true
+
+  vars:
+    terraform_working_dir: /home/ec2-user/ecsterraform/main.tf
+
+    - name: Initialize Terraform
+      ansible.builtin.command: terraform init
+      args:
+        chdir: "{{ terraform_working_dir }}"
+
+    - name: Plan Terraform changes
+      ansible.builtin.command: terraform plan
+      args:
+        chdir: "{{ terraform_working_dir }}"
+
+    - name: Apply Terraform changes
+      ansible.builtin.command: terraform apply -auto-approve
+      args:
+        chdir: "{{ terraform_working_dir }}"
+
+   
