@@ -1,0 +1,14 @@
+I have created a basic flask application using Dockerfile.
+
+created pytest.py to build and push the image to ECR, we can assigen tag value also here 
+
+then i have created the terraform scrip that will create the ECS cluster and service, we have to provide the ECR repo name in code 
+
+this above two steps are working correctly i have tested this and task is up and running 
+
+than we can use the ansible playbook to run the terraform script agian for update  
+
+but for ansible playbook the testing part is remaing due to server issues 
+
+
+ 
